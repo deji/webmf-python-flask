@@ -22,10 +22,10 @@ spec:
         sh 'pip install -r requirements.txt'
         sh '''
           cat > build.properties <<EOF
-          type=docker/image
-          reference=oladejif/t8-repo-jenkins-spinnaker:second-4
-          name=oladejif/t8-repo-jenkins-spinnaker
-          version=second-4
+          TYPE=docker/image
+          REFERENCE=oladejif/t8-repo-jenkins-spinnaker:second-4
+          NAME=oladejif/t8-repo-jenkins-spinnaker
+          VERSION=second-4
           EOF
         '''.stripIndent()
       }
