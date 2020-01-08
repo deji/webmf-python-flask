@@ -19,6 +19,14 @@ spec:
     stage('build') {
       steps {
         sh 'pip install -r requirements.txt'
+        sh '''
+          cat > build.properties <<EOF
+          type=docker/image
+          reference=oladejif/t8-repo-jenkins-spinnaker:second-2
+          name=oladejif/t8-repo-jenkins-spinnaker
+          version=second-2
+          EOF
+        '''.stripIndent()
       }
     }
     stage('test') {
@@ -29,7 +37,12 @@ spec:
         always {
           junit 'test-reports/*.xml'
         }
-      }    
+      }
     }
+  }
+  post {
+      always {
+          archiveArtifacts artifacts: 'build.properties', onlyIfSuccessful: true
+      }
   }
 }
