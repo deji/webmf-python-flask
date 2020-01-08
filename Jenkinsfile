@@ -1,5 +1,20 @@
 pipeline {
-  agent { docker { image 'python:3.7.2' } }
+  agent {
+    kubernetes {
+      //cloud 'kubernetes'
+      defaultContainer 'python'
+      yaml """
+kind: Pod
+spec:
+  containers:
+  - name: python
+    image: python:3.7.2
+    command:
+    - cat
+    tty: true
+"""
+    }
+  }
   stages {
     stage('build') {
       steps {
