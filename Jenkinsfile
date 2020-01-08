@@ -18,6 +18,7 @@ spec:
   stages {
     stage('build') {
       steps {
+        sh 'echo "opportunity to change things"'
         sh 'pip install -r requirements.txt'
         sh '''
           cat > build.properties <<EOF
