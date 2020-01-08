@@ -25,7 +25,6 @@ spec:
           TYPE=docker/image
           REFERENCE=oladejif/t8-repo-jenkins-spinnaker:second-4
           NAME=oladejif/t8-repo-jenkins-spinnaker
-          VERSION=second-4
           EOF
         '''.stripIndent()
       }
