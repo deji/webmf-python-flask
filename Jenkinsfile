@@ -23,9 +23,9 @@ spec:
         sh '''
           cat > build.properties <<EOF
           type=docker/image
-          reference=oladejif/t8-repo-jenkins-spinnaker:second-3
+          reference=oladejif/t8-repo-jenkins-spinnaker:second-4
           name=oladejif/t8-repo-jenkins-spinnaker
-          version=second-2
+          version=second-4
           EOF
         '''.stripIndent()
       }
